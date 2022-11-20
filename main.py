@@ -30,7 +30,7 @@ class Item(BaseModel):
     name: str
 
 # Membaca dataset(excel)
-df = pd.read_csv('ColdPlay.csv')
+df = pd.read_csv('file.csv')
 
 # df.head()
 
