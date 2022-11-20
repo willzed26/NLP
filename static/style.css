@@ -1,0 +1,40 @@
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: white; */
+    /* background-image: url({{ url_for('static', path='/background.webp') }}); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.navigation-color {
+    background-color: #f0e8c0;
+}
+
+.navigation-title {
+    font-size: larger;
+    font-weight: bolder;
+    color: #834611 !important;
+    text-decoration: none;
+    animation-name: colorful;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+@keyframes colorful {
+    0%  {color: #834611;}
+    50% {color: white;}
+    100%{color: #834611;}
+}
+
+.card-color {
+    background-color: #abebfb;
+    color: #202529;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
