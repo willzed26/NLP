@@ -50,7 +50,7 @@ X = vectorizer.fit_transform(lyrics) # TF
 
 @app.post("/")
 async def create_item(request: Request, input:str = Form(...)):
-    query = input # Input user
+    query = input.lower() # Input user
     query_vec = vectorizer.transform([query]) # TF-IDF
     results = cosine_similarity(X,query_vec).reshape((-1)) # Mencari kesamaan pada dataset dengan yang di input oleh user
     list=""
