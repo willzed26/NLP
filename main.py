@@ -53,10 +53,13 @@ async def create_item(request: Request, input:str = Form(...)):
     query = input.lower() # Input user
     query_vec = vectorizer.transform([query]) # TF-IDF
     results = cosine_similarity(X,query_vec).reshape((-1)) # Mencari kesamaan pada dataset dengan yang di input oleh user
-    list=""
-    for i in np.argsort(results)[-2:]:
+    # list=""
+    list=[]
+    dummy3=""
+    for i in np.argsort(results)[-5:]:
         dummy1 = str(df.iloc[i,1])
         dummy2 = str(df.iloc[i,2])
-        list=dummy1+"-"+dummy2
+        dummy3=dummy1+"-"+dummy2
+        list.append(dummy3)
     context = {'request': request, 'list': list}
     return templates.TemplateResponse("index.html", context)
