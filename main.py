@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import cgi
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -53,7 +52,6 @@ async def create_item(request: Request, input:str = Form(...)):
     query = input.lower() # Input user
     query_vec = vectorizer.transform([query]) # TF-IDF
     results = cosine_similarity(X,query_vec).reshape((-1)) # Mencari kesamaan pada dataset dengan yang di input oleh user
-    # list=""
     list=[]
     dummy3=""
     for i in np.argsort(results)[-5:]:
